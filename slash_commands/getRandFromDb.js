@@ -3,14 +3,14 @@ const contents = require('../sql-setup.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
-		.setName('returnrandom')
+		.setName('getrandomline')
 		.setDescription('Get random entry from the database')
         .addChannelOption(option =>
             option.addChannelTypes(ChannelType.GuildText).setName('channel')
                 .setDescription('The channel to echo into'))
         .addUserOption(option =>
             option.setName('user')
-            .setDescription('who would you like it to be whispered to?'))
+            .setDescription('who would you like it to be sent to?'))
             .setDefaultMemberPermissions(PermissionFlagsBits.BanMembers),
 	async execute(interaction) {
         let user = (interaction.options.get('user')) ? interaction.options.get('user').value : '';
