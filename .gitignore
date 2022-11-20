@@ -1,0 +1,11 @@
+# Ignore dependencies
+node_modules/
+# Ignore config.json
+config.json
+# Ignore database
+database.sqlite
+config.json
+database.sqlite
+node_modules/.package-lock.json
+package-lock.json
+lines.csv
