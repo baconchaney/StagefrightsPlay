@@ -1,4 +1,4 @@
-const { Sequelize, DataTypes, Model } = require('sequelize');
+const { Sequelize, DataTypes, Model, Op, literal, fn } = require('sequelize');
 const { dbName, dbUser, dbPw } = require('./config.json');
 
 const sequelize = new Sequelize(dbName, dbUser, dbPw, {
@@ -17,6 +17,8 @@ const sequelize = new Sequelize(dbName, dbUser, dbPw, {
  * usage_count  INT NOT NULL DEFAULT 0
  * );
  */
+
+
 const data = sequelize.define('data', {
 	id: {
 		type: Sequelize.DataTypes.INTEGER,
