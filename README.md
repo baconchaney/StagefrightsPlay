@@ -21,3 +21,8 @@ https://discord.com/api/oauth2/authorize?client_id=1039624784700526652&permissio
 `/getrandomline` - Will ask for two optional fields, the channel you would like it to be sent to (the bot requires permission to send into the channel) and a user you would like it to target in the reply.
 
 `/importdata` - Will be removed. Implementation is currently used to reset the database to hold all 80 lines by re-importing it and will not work outside of the development environment.
+
+`/restoreall` - Designed to restore all entries in the table that have been "deleted" (all entries are soft deleted to remove the requirement to keep re-importing data). Deployment of the command was not as clean as I would have liked due to deploying to an AWS EC2 instance at the same time to allow external testing to take place. Dependencies are now resolved and the command functions as expected. 
+
+## Additional considerations
+I'm currently running some external testing with other Discord users to help highlight any potential issues that need addressing. After some consideration when migrating the code to an external host it looks as though I might need to create a separate table to allow for each server to have it's own instance as well as the ability to add in their own phrases.
