@@ -1,7 +1,5 @@
 const { SlashCommandBuilder,PermissionFlagsBits } = require('discord.js');
-const { Op, literal, fn } = require('sequelize');
 const contents = require('../sql-setup.js')
-
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -15,7 +13,7 @@ module.exports = {
 			const restoredTags = await contents.data.restore({
 				where:{
 					deletedAt: {
-						[Op.ne]:0,
+						[contents.Op.ne]:0,
 					}
 				}
 			});
