@@ -1,4 +1,5 @@
 const { SlashCommandBuilder,PermissionFlagsBits } = require('discord.js');
+const { Op, literal, fn } = require('sequelize');
 const contents = require('../sql-setup.js')
 
 
