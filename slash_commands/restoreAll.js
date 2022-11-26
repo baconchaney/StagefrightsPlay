@@ -10,10 +10,13 @@ module.exports = {
 	async execute(interaction) {
 		const tagList = await contents.data.findAll();
 
-		for(tag of tagList){
-			const result = contents.data.restore({where:{id: tag.id}});
-			console.log(result);
-		}
+		const restoredTags = await contents.data.restore({
+			where:{
+				deletedAt: {
+					[Op.ne]:0,
+				}
+			}
+		});
 
 		return interaction.reply(`Restored!`);
 
