@@ -6,7 +6,7 @@ I am currently running The Wild Beyond The Witchlight D&D campaign for my player
 ## How to use
 ### Getting started
 To get started you can invite the bot to your server using:
-https://discord.com/api/oauth2/authorize?client_id=1039624784700526652&permissions=311385339968&scope=bot
+https://discord.com/api/oauth2/authorize?client_id=1039624784700526652&permissions=534791059520&scope=bot%20applications.commands
 ** Please be aware** I have used the bot successfully to run the encounter on my server. However, I am currently waiting on feedback from other users to ensure it runs properly in different environments. The bot will change over time as I tidy up the commands based on feedback.
 
 ### Slash Commands
