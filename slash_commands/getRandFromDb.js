@@ -15,10 +15,17 @@ module.exports = {
 	async execute(interaction) {
         let user = (interaction.options.get('user')) ? interaction.options.get('user').value : '';
         let channel = (interaction.options.get('channel')) ? interaction.options.get('channel').value : '';
+        let guildId = interaction.guildId;
         const client = interaction.client;
 
         // equivalent to: SELECT * FROM tags WHERE name = 'tagName' LIMIT 1;
-        const tag = await contents.data.findOne({ order: [contents.sequelize.random()]});
+        const tag = await contents.data.findOne({ 
+            order: [contents.sequelize.random({
+                where: {
+                    guildId: [null,guildId]      
+                }
+            })]
+        });
 
         if (tag) {
             let introText = (user)? `${bold('Stagefright whispers to')} ${userMention(user)}` : bold('Stagefright whispers') ;

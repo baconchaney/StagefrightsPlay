@@ -7,14 +7,14 @@ module.exports = {
 		.setDescription('Get all data from database')
 		.setDefaultMemberPermissions(PermissionFlagsBits.BanMembers),
 	async execute(interaction) {
-		const tagList = await contents.data.findAll();
-
+		serverId = interaction.guildId
 		try{
 			const restoredTags = await contents.data.restore({
 				where:{
 					deletedAt: {
 						[contents.Op.ne]:0,
-					}
+					},
+					guildId: serverId,
 				}
 			});
 		} catch(error){

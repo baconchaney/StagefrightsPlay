@@ -19,6 +19,7 @@ module.exports = {
 			const entry = await contents.data.create({
 				textString: tagDescription,
 				username: interaction.user.username,
+				guildId: interaction.guildId,
 			});
 
 			return interaction.reply(`Tag ${entry.textString} added.`);

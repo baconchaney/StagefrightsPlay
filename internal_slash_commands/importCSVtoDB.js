@@ -19,8 +19,8 @@ module.exports = {
             const entry = contents.data.create({
 				textString: tagDescription,
 				username: interaction.user.username,
+                guildId: interaction.guildId,
 			});
-            console.log(`ROW=${String(row)}`)
         })
         .on('end',rowCount => {
             console.log(`Parsed ${rowCount} rows`);

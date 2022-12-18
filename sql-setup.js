@@ -26,16 +26,17 @@ const data = sequelize.define('data', {
 		primaryKey: true
 	  },
 	  textString: Sequelize.TEXT,
-	username: Sequelize.STRING,
-},
-{
-	tableName: 'data',
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
-    deletedAt: 'deletedAt',
-    paranoid: true,
-    timestamps: true,
-}
+	  username: Sequelize.STRING,
+	  guildId: Sequelize.INTEGER,
+	},
+	{
+		tableName: 'data',
+    	createdAt: 'created_at',
+    	updatedAt: 'updated_at',
+    	deletedAt: 'deletedAt',
+    	paranoid: true,
+    	timestamps: true,
+	}
 );
 
 const sync = ()=> {data.sync()};
