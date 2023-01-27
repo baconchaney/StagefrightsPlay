@@ -27,7 +27,7 @@ https://discord.com/api/oauth2/authorize?client_id=1039624784700526652&permissio
 ## Additional considerations
 I'm currently running some external testing with other Discord users to help highlight any potential issues that need addressing. After some consideration when migrating the code to an external host it looks as though I might need to create a separate table to allow for each server to have it's own instance as well as the ability to add in their own phrases.
 
-##Support:
+## Support:
 If you've found this project helpful and would like to support me, please feel free to send me a donation. 
 <p><a href="https://ko-fi.com/baconchaney"> <img align="left" src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" height="50" width="210" alt="baconchaney" /></a></p><br><br>
 
